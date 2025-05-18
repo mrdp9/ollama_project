@@ -1,7 +1,6 @@
 FROM nginx:latest
 COPY . /usr/share/nginx/html
-# Update and install dependencies
 RUN apt update && \
-    apt install -y curl sudo && \
+    apt install -y curl && \
     apt upgrade -y
-
+EXPOSE 80
