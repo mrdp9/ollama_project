@@ -1,0 +1,15 @@
+# Use the official Ollama image as the base
+FROM ollama/ollama:latest
+
+# Copy the custom entrypoint script into the container
+COPY start_ollama.sh /usr/local/bin/start_ollama.sh
+
+# Make the script executable
+RUN chmod u+x /usr/local/bin/start_ollama.sh
+
+# Set the custom script as the container's entrypoint
+ENTRYPOINT ["/usr/local/bin/start_ollama.sh"]
+
+# You can set a default model name here if the script takes arguments,
+# but our script hardcodes it for simplicity in this example.
+# CMD ["llama3.2:3b"]

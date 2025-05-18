@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis - AI Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="jarvis-container">
+        <header class="jarvis-header">
+            <img src="jarvis-logo.png" alt="Jarvis Logo" id="jarvis-logo"> <h1>J.A.R.V.I.S</h1>
+            <p>Your Personal AI Assistant</p>
+        </header>
+
+        <div id="chat-history" class="chat-history">
+            <div class="chat-message bot-message">
+                <p>Hello! I am Jarvis, your personal AI assistant powered by Llama3.2. How can I assist you today?</p>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <textarea id="prompt-input" placeholder="Type or speak your message..." rows="2"></textarea>
+            <button id="send-button" title="Send Message"><i class="fas fa-paper-plane"></i></button>
+            <button id="mic-button" title="Speak Message"><i class="fas fa-microphone"></i></button>
+        </div>
+
+        <div class="controls">
+            <label class="switch">
+                <input type="checkbox" id="tts-toggle" checked>
+                <span class="slider round"></span>
+            </label>
+            <label for="tts-toggle" class="control-label">Enable Voice Output</label>
+        </div>
+        
+        <div id="loading-indicator" class="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            Processing...
+        </div>
+         <div id="listening-indicator" class="listening-indicator" style="display: none;">
+            <i class="fas fa-waveform"></i> Listening...
+        </div>
+
+        <footer>
+            Powered by Ollama & Llama3.2:3b
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
