@@ -148,6 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     return `<code>${escapedCode}</code>`;
                 })
                 .replace(/\n/g, '<br>');                       // Newlines to <br>.
+            // Sanitize the HTML content before assigning it to innerHTML
+            htmlContent = DOMPurify.sanitize(htmlContent, {USE_PROFILES: {html: true}});
             p.innerHTML = htmlContent;
         } else { // For system messages (e.g., errors).
             messageElement.classList.add('system-message'); // Style this class in CSS if needed.
